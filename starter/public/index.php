@@ -1,4 +1,5 @@
 <?php 
+
 define("DD", "..");
 
 require DD . "/wpa21/functions.php";
