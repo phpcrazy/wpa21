@@ -6,7 +6,8 @@ function home_controller() {
 	load_view("home");
 }
 
-function blog_controller() {
+function blog_controller($category, $id = null) {
+
 	$data = [
 		"name"		=> "Aung Aung",
 		"address"	=> "Hledan"

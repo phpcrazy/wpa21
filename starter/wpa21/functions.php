@@ -24,16 +24,29 @@ function get_config($value) {
 	$file = DD . "/app/config/" . $split_value[0] . ".php";
 	if(file_exists($file)) {
 		$data = require $file;
-		if(array_key_exists($split_value[1], $data)) {
-			return $data[$split_value[1]];
-		} else {
-			trigger_error("Config Key not found in " . $split_value[0] . ".php");
-		}
+
+		array_shift($split_value);
+		
+		return _arrayResolver($split_value, $data);
 	} else {
 		trigger_error($split_value[0] . ".php file not found in config folder, Idiot!", E_USER_ERROR);
 	}
 }
 
+function _arrayResolver($key, $default_array) {
+	foreach ($key as $k => $value) {
+		$default_array = $default_array[$value];
+	}
+	return $default_array;
+}
+
+
+function dump($value, $die = false) {
+	var_dump($value);
+	if($die == true) {
+		die();
+	}
+}
 
 
  ?>
