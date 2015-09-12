@@ -6,7 +6,7 @@ define("DD", realpath(__DIR__ . "/.."));
 require DD . "/wpa21/functions.php";
 require DD . "/app/controller/controllers.php";
 
-
+// Getting URI Request
 $request_uri = $_SERVER["REQUEST_URI"];
 $script_name = $_SERVER['SCRIPT_NAME'];
 
@@ -17,16 +17,7 @@ $path_info = array_diff($request_uri, $script_name);
 
 $path_info = array_values($path_info);
 
-$routes = array(
-	'home' => [
-		'controller' => 'home_controller'
-		],
-	'blog'	=> [
-		'controller' => 'blog_controller',
-		'category'	=> null,
-		'id'		=> null
-		]
-	);
+$routes = include DD . "/app/routes.php";
 
 if(empty($path_info)) {
 	$path_info[0] = "home";

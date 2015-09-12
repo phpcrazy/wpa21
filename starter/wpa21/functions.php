@@ -13,7 +13,7 @@ function load_view($page, $data = null) {
 	} else {
 		echo "404!!!";
 	}
-	return ob_end_flush();
+	ob_end_flush(); // ob_get_clean();
 
 }
 
