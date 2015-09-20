@@ -1,0 +1,13 @@
+{
+	"autoload": {
+		"psr-4": {
+			"Wpa21\\": "wpa21/src"
+		},
+		"classmap": [
+			"wpa21/library"
+		],
+		"files": [
+			"wpa21/helpers.php"
+		]
+	}
+}
