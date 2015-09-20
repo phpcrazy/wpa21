@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Config' => $baseDir . '/wpa21/library/ConfigLoader.php',
+    'DynamicChain' => $baseDir . '/wpa21/library/MethodChain.php',
+    'StaticMethod' => $baseDir . '/wpa21/library/StaticMethod.php',
     'View' => $baseDir . '/wpa21/library/ViewLoader.php',
 );
