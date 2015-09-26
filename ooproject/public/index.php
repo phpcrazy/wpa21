@@ -1,62 +1,30 @@
 <?php 
 
-
 define("DD", realpath(__DIR__ . "/.."));
 
 require DD . "/vendor/autoload.php";
 
 
-// $greet = function($name) {
-// 	echo "Hello " . $name;
-// };
+$users = DB::table("users")->get();
 
-// $greet("Myanmar Links");
+foreach($users as $user) {
+    print "Name " . $user['name'] . "<br />";
+}
 
-// var_dump( gettype($greet) );
+$another_users = DB::table("users")->where("id", 1)->get();
 
-$final_value = StaticMethod::getInstance(12000)
-					->sum(5600)
-					->minus(450)
-					->multiply(5)
-					->get();
+foreach($another_users as $user) {
+    print "Address : " . $user['address'] . "<br />";
+}
 
-echo $final_value . "<br />";
+$other_users = DB::table("users")->where("name", "Aung Aung")->get();
 
-$another_value = StaticMethod::getInstance(500)
-					->sum(45)
-					->minus(3)
-					->get();
-
-echo $another_value . "<br />";
-
-$next_value = StaticMethod::getInstance(5000)
-				->multiply(5)
-				->get();
-echo $next_value;
-die();
-$dynamic = new DynamicChain(6000);
-
-echo $dynamic->sum(45)->minus(120)->get();
-
-// use Wpa21\App\Application;
-// use Wpa21\Core\Test;
-
-
-// $app = new Application();
-// $test = new Test();
-
-// Config::get();
-
-// View::make();
-
-// $array = [
-// 	'id'	=> 1,
-// 	"name"	=> 'Thiha'
-// ];
-
-
-// dump($array, true);
+foreach($other_users as $user) {
+    print "Name : " . $user['name'] . "<br />";
+}
 
 
 
- ?>
+
+
+

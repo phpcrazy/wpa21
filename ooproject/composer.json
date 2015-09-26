@@ -4,7 +4,8 @@
 			"Wpa21\\": "wpa21/src"
 		},
 		"classmap": [
-			"wpa21/library"
+			"wpa21/library",
+			"wpa21/provider"
 		],
 		"files": [
 			"wpa21/helpers.php"
