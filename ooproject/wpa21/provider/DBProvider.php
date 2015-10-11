@@ -28,6 +28,15 @@ class DB extends PDO {
         parent::__construct($dns, $this->user, $this->pass);
     }
 
+    public function testDb() {
+
+        var_dump( $this->inTransaction());
+        $this->beginTransaction();
+        var_dump( $this->inTransaction() );
+        $this->commit();
+
+    }
+
 
     public static function table($table_name) {
 
@@ -63,11 +72,6 @@ class DB extends PDO {
 		return $this->query($sql);
 
 	}
-
-
-    public function __destruct() {
-        echo "Destruct!";
-    }
 }
 
 

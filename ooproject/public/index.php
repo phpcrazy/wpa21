@@ -5,6 +5,9 @@ define("DD", realpath(__DIR__ . "/.."));
 require DD . "/vendor/autoload.php";
 
 
+DB::table("users")->testDb();
+
+die();
 $users = DB::table("users")->get();
 
 foreach($users as $user) {
